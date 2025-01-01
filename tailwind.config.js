@@ -5,8 +5,11 @@ export default {
     extend: {
       backgroundImage: {
         "main-bg":
-          "url('https://images.unsplash.com/photo-1726333629906-9a52575d4b78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIwfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D')",
+          "url('https://images.unsplash.com/photo-1734779205331-4566d6965fa2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDh8Ym84alFLVGFFMFl8fGVufDB8fHx8fA%3D%3D')",
       },
+      fontFamily: {
+        'engagement': ['engagement', 'serif']
+      }
     },
   },
   plugins: [],

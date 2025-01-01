@@ -39,15 +39,14 @@ function App() {
 
   return (
     <>
-      <main className="bg-main-bg bg-cover h-full flex items-center text-white font-sans text-2xl">
-        <div className="bg-overlay flex items-center">
-          <div className="max-w-4xl w-full mx-auto">
-            <OutputDisplay hiraganaText={hiraganaText} />
-            <Input value={inputText} onChange={handleInputChange} />
-            <p className="text-base mt-4 text-center">
-              Type in english and see hiragana conversion above
-            </p>
-          </div>
+      <main className="h-full flex flex-col text-white font-sans text-2xl p-4">
+        <h1 className="font-engagement text-center text-4xl font-semibold mb-[20vh]">Hiragana Typing</h1>
+        <div className="max-w-4xl w-full mx-auto">
+          <OutputDisplay hiraganaText={hiraganaText} />
+          <Input value={inputText} onChange={handleInputChange} />
+          <p className="tracking-wider text-sm italic mt-4 text-center text-white/50">
+            Type in english syllables and see hiragana conversion above
+          </p>
         </div>
       </main>
     </>
