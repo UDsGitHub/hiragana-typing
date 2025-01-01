@@ -6,6 +6,13 @@ body,
   height: 100%;
 }
 
+
+body {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #5b585f;
+  --sb-size: 1rem;
+}
+
 /* main {
   background: rgb(40, 45, 69);
   background: radial-gradient(
@@ -22,6 +29,23 @@ main {
   background-position: center;
 }
 
-h1 {
-  /* font-family: "Engagement", serif; */
+.result-list {
+  position: relative;
+  overflow-y: auto; /* Scrollable if the content overflows */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #232E33;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5b585f;
+  border-radius: 10px;
 }

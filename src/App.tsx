@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import "./App.css";
 import Input from "./components/Input";
 import OutputDisplay from "./components/OutputDisplay";
 import { hiraganaCharacters } from "./data";
+import TextList, { TextType } from "./components/TextList";
 
 function App() {
   const [inputText, setInputText] = useState("");
   const [hiraganaText, setHiraganaText] = useState("");
+  const [textList, setTextList] = useState<TextType[]>([]);
 
   const processInputText = (inputValue: string) => {
     const length = inputValue.length;
@@ -37,16 +39,31 @@ function App() {
     processInputText(value);
   };
 
+  const handleFormSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setTextList((prevState) => [
+      ...prevState,
+      { hiragana: hiraganaText, syllable: inputText },
+    ]);
+    setInputText("");
+    setHiraganaText("");
+  };
+
   return (
     <>
       <main className="h-full flex flex-col text-white font-sans text-2xl p-4">
-        <h1 className="font-engagement text-center text-4xl font-semibold mb-[20vh]">Hiragana Typing</h1>
+        <h1 className="font-engagement tracking-wider text-center text-4xl font-semibold mb-[15vh]">
+          Hiragana Typing
+        </h1>
         <div className="max-w-4xl w-full mx-auto">
           <OutputDisplay hiraganaText={hiraganaText} />
-          <Input value={inputText} onChange={handleInputChange} />
-          <p className="tracking-wider text-sm italic mt-4 text-center text-white/50">
-            Type in english syllables and see hiragana conversion above
-          </p>
+          <form action="" onSubmit={handleFormSubmit}>
+            <Input value={inputText} onChange={handleInputChange} />
+            <p className="tracking-wider text-sm italic text-center text-white/50 mb-4">
+              Type in english syllables and see hiragana conversion above
+            </p>
+            <TextList list={textList} />
+          </form>
         </div>
       </main>
     </>
