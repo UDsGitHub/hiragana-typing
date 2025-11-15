@@ -51,15 +51,15 @@ function App() {
 
   return (
     <>
-      <main className="h-full flex flex-col text-white font-sans text-2xl p-4">
-        <h1 className="font-engagement tracking-wider text-center text-4xl font-semibold mb-[15vh]">
+      <main className="h-full flex flex-col justify-center text-white font-sans text-2xl p-4">
+        <h1 className="font-engagement tracking-wider text-center text-4xl font-semibold mb-10">
           Hiragana Typing
         </h1>
         <div className="max-w-4xl w-full mx-auto">
           <OutputDisplay hiraganaText={hiraganaText} />
           <form action="" onSubmit={handleFormSubmit}>
             <Input value={inputText} onChange={handleInputChange} />
-            <p className="tracking-wider text-sm italic text-center text-white/50 mb-4">
+            <p className="tracking-wider text-sm italic text-center text-white/50 mb-4 cursor-default">
               Type in english syllables and see hiragana conversion above
             </p>
             <TextList list={textList} />
